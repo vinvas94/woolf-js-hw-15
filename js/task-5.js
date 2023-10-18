@@ -22,7 +22,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  boxesContainer.innerHTML = "";
+  refs.boxEl.innerHTML = "";
 }
 
 refs.buttonCreate.addEventListener("click", () => {
