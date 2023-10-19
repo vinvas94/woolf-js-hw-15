@@ -1,40 +1,43 @@
 // Варіант 1
 const form = document.querySelector(".login-form");
-
 form.addEventListener("submit", onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
 
-  const newForm = event.target;
+  const formElement = event.currentTarget.elements;
 
-  const email = newForm.elements.email.value;
-  const password = newForm.elements.password.value;
+  const email = formElement.email.value;
+
+  const password = formElement.password.value;
+  const data = {
+    email: email,
+    password: password,
+  };
   if (email === "" || password === "") {
     return alert("Please fill in all the fields!");
   }
-  console.log(new Array(email, password));
-  form.reset();
+
+  event.currentTarget.reset();
+  console.log(data);
 }
 
 // // Варіант 2
+
 // const form = document.querySelector(".login-form");
+
 // form.addEventListener("submit", onSubmit);
 
 // function onSubmit(event) {
 //   event.preventDefault();
 
-//   const formElement = event.currentTarget.elements;
-//   const email = formElement.email.value;
-//   const password = formElement.password.value;
-//   const data = {
-//     email: email.value,
-//     password: password.value,
-//   };
+//   const newForm = event.target;
+
+//   const email = newForm.elements.email.value;
+//   const password = newForm.elements.password.value;
 //   if (email === "" || password === "") {
 //     return alert("Please fill in all the fields!");
 //   }
-
-//   event.currentTarget.reset();
-//   console.log(data);
+//   console.log(new Object({ email, password }));
+//   form.reset();
 // }

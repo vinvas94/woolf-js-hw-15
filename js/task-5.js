@@ -30,4 +30,6 @@ refs.buttonCreate.addEventListener("click", () => {
   createBoxes(amount);
 });
 
-refs.buttonDestroy.addEventListener("click", destroyBoxes);
+refs.buttonDestroy.addEventListener("click", () => {
+  destroyBoxes();
+});
